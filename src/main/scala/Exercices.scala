@@ -10,12 +10,14 @@ case object Exercices{
   } else {
     x + y
   }
+
   //Ejercicio 3 Escribe un programa Scala para obtener la diferencia absoluta entre n y 51. Si n es mayor que 51 devuelve el triple de la diferencia absoluta.
   def absDif (n: Int): Int = if (n > 51) {
     3 * (n - 51)
   } else {
     51 - n
   }
+
   //Ejercicio 4 Escribe un programa Scala para comprobar dos enteros dados, y devolver true si uno de ellos es 30 o si su suma es 30.
   def checkVal (x: Int, y: Int): Boolean = x == 30 || y == 30 || x  + y == 30
 
@@ -31,7 +33,6 @@ case object Exercices{
 
   //Ejercicio 7 Escribe un programa Scala para eliminar el carácter en una posición dada de una cadena dada. La posición dada estará en el rango 0...longitud de la cadena -1 inclusive.
   def delChar (x: String, y: Int): String = x.substring(0, y) + x.substring(y + 1)
-
 
   //Ejercicio 8 Escribe un programa Scala para intercambiar el primer y el último carácter de una cadena dada y devolver la nueva cadena.
   //def swapChar (x: String): String = if (x.charAt(0).equals(x.charAt(x.length - 1))) {
@@ -77,7 +78,7 @@ case object Exercices{
       mult *= i
       print(i + " ")
     }
-    "\nLa suma total es: " + total + " y la multiplicación total: " + mult
+    "\nLa suma total es: " + total + "\nLa multiplicación total: " + mult
   }
 
   //Ejercicio 16 Escribe un programa Scala para eliminar duplicados de un listbuffer/lista dado
@@ -96,6 +97,9 @@ case object Exercices{
   def equalString (x: String, y: String): Boolean = x.equals(y)
 
   //Ejercicio 19 Escribe un programa Scala para convertir todos los caracteres a cadenas en minúsculas y mayúsculas
+  def minMay (x: String): String = {
+    "Minúsculas: " + x.toLowerCase() + "\nMayúsculas: " + x.toUpperCase()
+  }
 
   //Ejercicio 20 Escribe un programa Scala para sumar los valores de un array dado
   def sumArr (myArr:Array[Int]): Int = {
@@ -107,11 +111,11 @@ case object Exercices{
   }
 
   //Ejercicio 21 Escribe un programa en Scala para comprobar si el valor del primer o último elemento de un array dado (de longitud 1 o más) son iguales o no
+  def equalVal (x: Array[Int]): Boolean = x(0) == x(x.length - 1)
 
   //Ejercicio 22 Escribe un programa Scala para encontrar el valor máximo y mínimo de un array de enteros
   def maxMin (x: Array[Int]): String = {
     "El valor máximo del array es: " + x.max + " y el mínimo  es: " + x.min
-
   }
 
   //Ejercicio 23 Escribe un programa en Scala para comprobar la igualdad de dos arrays
@@ -121,7 +125,7 @@ case object Exercices{
 
 
   def main(args: Array[String]): Unit ={
-    println(iterLista(List(1,2,3,4,8,9)))
+    println(minMay("hola Soy Yo "))
   }
 }
 
