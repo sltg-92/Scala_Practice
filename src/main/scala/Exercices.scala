@@ -35,7 +35,14 @@ case object Exercices{
   def delChar (x: String, y: Int): String = x.substring(0, y) + x.substring(y + 1)
 
   //Ejercicio 8 Escribe un programa Scala para intercambiar el primer y el último carácter de una cadena dada y devolver la nueva cadena.
-  //def swapChar (x: String): String = if (x.charAt(0).equals(x.charAt(x.length - 1))) {
+  def swapChar (x: String): String = if (x.head.equals(x.last)) {
+    x
+  } else {
+    val lastCh = x.head
+    val firstCh = x.last
+    val delStr = x.substring(1)
+    firstCh + delStr.substring(0, delStr.length -1) + delStr.substring(delStr.length) + lastCh
+  }
 
   //Ejercicio 9 Escribe un programa Scala para crear una nueva cadena que sea 4 copias de los 2 primeros caracteres de una cadena dada, si la longitud de la cadena dada es menor que 2 devuelva la cadena original.
   def newString (x: String): String = if (x.length < 2){
@@ -48,14 +55,24 @@ case object Exercices{
   def newString2 (x: String): String = x.head + x.substring(x.length - 1)
 
   //Ejercicio 11 Escribe un programa en Scala para crear una lista de diferentes maneras.
+  //Tabulate
+  def tabulateList (x: Int): List[Int] =  List.tabulate(x)(_ + 2)
+
+  //Range
+  def rangeList (x:Int, y: Int): List[Int] = List.range(x , y)
 
   //Ejercicio 12 Escribe un programa Scala para añadir un solo elemento y múltiples elementos a un listbuffer/lista dado
   //ListBuffer
-  def addList (myList: ListBuffer[Int], newArr: Array[Int]): ListBuffer[Int] = {
+  def addListB (myList: ListBuffer[Int], newArr: Array[Int]): ListBuffer[Int] = {
     for (i <- newArr){
       myList += i
     }
     myList
+  }
+
+  //List
+  def addList (myList: List[Int], x: List[Int]): List[Any] = {
+    myList ::: x
   }
 
   //Ejercicio 13 Escribe un programa Scala para eliminar elementos simples y múltiples de un listbuffer/lista dado.
@@ -68,6 +85,7 @@ case object Exercices{
   }
 
   //Ejercicio 14 Escribe un programa en Scala para eliminar elementos de una lista dada.
+
 
   //Ejercicio 15 Escribe un programa Scala para iterar sobre una lista para imprimir los elementos y calcular la suma y el producto de todos los elementos de esta lista
   def iterLista (myList:List[Int]): String = {
@@ -83,12 +101,7 @@ case object Exercices{
 
   //Ejercicio 16 Escribe un programa Scala para eliminar duplicados de un listbuffer/lista dado
   //ListBuffer
-  def duplList (myList:ListBuffer[Int], delArr: Array[Int]): ListBuffer[Int] = {
-    for (i <- delArr){
-      myList -= i
-    }
-    myList
-  }
+  def duplList (myList:ListBuffer[Int]): ListBuffer[Int] = myList.distinct
 
   //Ejercicio 17 Escribe un programa Scala para concatenar una cadena dada al final de otra cadena
   def concatString (x: String, y: String): String = x.concat(" " + y)
@@ -125,7 +138,7 @@ case object Exercices{
 
 
   def main(args: Array[String]): Unit ={
-    println(minMay("hola Soy Yo "))
+    println()
   }
 }
 
